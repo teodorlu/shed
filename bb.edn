@@ -1,0 +1,2 @@
+{:deps {io.github.teodorlu/bb-scripts {:local/root "."}}
+ :bbin/bin {update-repos {:main-opts ["-m" "teodorlu.bb-scripts.update-repos/-main"]}}}
