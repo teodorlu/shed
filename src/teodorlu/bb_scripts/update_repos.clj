@@ -8,18 +8,14 @@
   "Return the current repo branch name as a string, or nil"
   [path]
   (let [{:keys [exit out]}
-        (shell {:out :string
-                :continue true
-                :dir path}
-               '[git symbolic-ref --short HEAD])]
+        (shell {:out :string, :continue true, :dir path}
+               "git symbolic-ref --short HEAD")]
     (when (zero? exit)
       (str/trim out))))
 
 (defn pending-changes? [path]
-  (not (str/blank? (str/trim  (:out (shell {:out :string
-                                            :continue true
-                                            :dir path}
-                                           '[git status --short]))))))
+  (not (str/blank? (str/trim  (:out (shell {:out :string, :continue true, :dir path}
+                                           "git status --short"))))))
 
 (defn do-update-repos! [path]
   (doseq [path (->> (fs/glob path "**/.git" {:hidden true})
@@ -29,8 +25,8 @@
                               (and (#{"main" "master"} (current-branch-name path))
                                    (not (pending-changes? path))))))]
     (println "update-repos: updating" path)
-    (shell "git pull" {:dir path
-                       :continue true})))
+    (shell {:dir path, :continue true}
+           "git pull")))
 
 (comment
   ;; motivation: I learn a lot from reading other people's source code. That
