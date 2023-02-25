@@ -6,7 +6,7 @@ A collection of Babashka scripts. Feel free to share / copy / use at your pleasu
 
 To install directly from Github, run:
 
-    bbin install io.github.teodorlu/browsetxt --latest-sha
+    bbin install io.github.teodorlu/bb-scripts --latest-sha
 
 To install from source,
 
