@@ -32,5 +32,18 @@
     (shell "git pull" {:dir path
                        :continue true})))
 
+(comment
+  ;; motivation: I learn a lot from reading other people's source code. That
+  ;; leaves me with lots of repos I've cloned, yet never done anything to. So I
+  ;; want a 1-op "update everyting command".
+  ;;
+  ;; Apparently, I've got 245 repos right now.
+
+  (defn count-repos [path]
+    (count (fs/glob path "**/.git" {:hidden true})))
+  (count-repos (fs/expand-home "~/dev"))
+  ;; => 245
+  )
+
 (defn -main [& args]
   (do-update-repos! (fs/cwd)))
