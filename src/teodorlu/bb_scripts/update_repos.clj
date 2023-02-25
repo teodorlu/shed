@@ -8,18 +8,18 @@
   "Return the current repo branch name as a string, or nil"
   [path]
   (let [{:keys [exit out]}
-        (shell '[git symbolic-ref --short HEAD]
-               {:out :string
+        (shell {:out :string
                 :continue true
-                :dir path})]
+                :dir path}
+               '[git symbolic-ref --short HEAD])]
     (when (zero? exit)
       (str/trim out))))
 
 (defn pending-changes? [path]
-  (not (str/blank? (str/trim  (:out (shell '[git status --short]
-                                           {:out :string
+  (not (str/blank? (str/trim  (:out (shell {:out :string
                                             :continue true
-                                            :dir path}))))))
+                                            :dir path}
+                                           '[git status --short]))))))
 
 (defn do-update-repos! [path]
   (doseq [path (->> (fs/glob path "**/.git" {:hidden true})
