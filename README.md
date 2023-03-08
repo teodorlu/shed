@@ -1,6 +1,6 @@
 # Teodor's Clojure shed
 
-A collection of tools made with Clojure.
+A collection of CLI and TUI tools made with Clojure.
 
 ## Rationale
 
