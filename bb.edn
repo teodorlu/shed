@@ -1,3 +1,7 @@
 {:deps {io.github.teodorlu/shed {:local/root "."}}
+
+ ;; 2023-03-08: bbin doesn't seem to support installing multiple scripts.
+ ;; I'm avoiding `bbin install .` untill I can figure out if this is possible through official means.
+ #_#_
  :bbin/bin {update-repos {:main-opts ["-m" "teodorlu.shed.update-repos/-main"]}
             browsetxt {:main-opts ["-m" "teodorlu.shed.browsetxt/-main"]}}}
