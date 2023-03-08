@@ -1,6 +1,9 @@
 # Teodor's Clojure shed
 
-Stability: unstable.
+A collection of tools made with Clojure.
+
+## Rationale
+
 I'm using these tools to drive my daily work, and I prefer to work without branching.
 I may push breaking changes.
 I may push bugs.
@@ -23,6 +26,17 @@ If you want to use these tools, you have a few options.
    If you make something nice, we can consider putting it in [contrib/]
 
 [contrib/]: ./contrib/
+
+## Scripts
+
+| script         | purpose                         | completion          | usage |
+|----------------|---------------------------------|---------------------|-------|
+| [quickcd]      | navigate quicker than with =cd= | experimental        | no    |
+| [update-repos] | batch-update git repos          | workds, rough edges | some  |
+
+[quickcd]: https://github.com/teodorlu/shed/tree/master/contrib/quickcd
+[update-repos]: https://github.com/teodorlu/shed/tree/master/contrib/update-repos
+
 
 ## Installing scripts
 
@@ -54,12 +68,3 @@ Any changes you make to the Clojure source files will now be reflected instantly
     cd shed
     contrib/teodorlu/install.sh
 
-## Scripts
-
-| script         | purpose                         | completion          | usage |
-|----------------|---------------------------------|---------------------|-------|
-| [quickcd]      | navigate quicker than with =cd= | experimental        | no    |
-| [update-repos] | batch-update git repos          | workds, rough edges | some  |
-
-[quickcd]: https://github.com/teodorlu/shed/tree/master/contrib/quickcd
-[update-repos]: https://github.com/teodorlu/shed/tree/master/contrib/update-repos
