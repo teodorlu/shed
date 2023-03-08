@@ -45,8 +45,7 @@ The recommended way to install these scripts is with [babashka/bbin][babashka-bb
 
 [babashka-bbin]: https://github.com/babashka/bbin
 
-Note: commenting out the following because bbin does not seem to install multiple binaries.
-   
+<!-- Note: commenting out the following because bbin does not seem to install multiple binaries. -->
 <!-- ### Install all scripts from Github `master` with bbin: -->
 
 <!--     bbin install io.github.teodorlu/shed --latest-sha -->
@@ -69,5 +68,5 @@ Note: commenting out the following because bbin does not seem to install multipl
 
     git clone https://github.com/teodorlu/shed.git
     cd shed
-    contrib/teodorlu-install/install.sh
+    ./src/teodorlu/shed/install.clj
 
