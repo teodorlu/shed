@@ -24,10 +24,12 @@
     (shell-project-root (str/join " " ["bbin" "install" "." "--as" as "--main-opts" main-opts]))))
 
 (defn -main [& _args]
-  (install-script! "ukenummer")
+  (install-script! "browsetxt")
+  (install-script! "month")
   (install-script! "path-lines")
+  (install-script! "ukenummer")
   (install-script! "update-repos")
-  (install-script! "browsetxt"))
+  ,)
 
 ;; trigger main when this script is run as an executable
 ;; see babashka book: https://book.babashka.org/#main_file
