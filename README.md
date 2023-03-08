@@ -29,10 +29,10 @@ If you want to use these tools, you have a few options.
 
 ## Scripts
 
-| script         | purpose                         | completion          | usage |
-|----------------|---------------------------------|---------------------|-------|
-| [quickcd]      | navigate quicker than with =cd= | experimental        | no    |
-| [update-repos] | batch-update git repos          | workds, rough edges | some  |
+| script         | purpose                         | completion         | usage |
+|----------------|---------------------------------|--------------------|-------|
+| [quickcd]      | navigate quicker than with =cd= | experimental       | no    |
+| [update-repos] | batch-update git repos          | works, rough edges | some  |
 
 [quickcd]: https://github.com/teodorlu/shed/tree/master/contrib/quickcd
 [update-repos]: https://github.com/teodorlu/shed/tree/master/contrib/update-repos
