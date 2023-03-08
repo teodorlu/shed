@@ -11,7 +11,7 @@ I may push breaking changes.
 I may push bugs.
 But when I push bugs, I also break my daily driver, so I try to avoid breakage.
 Think of `teodorlu/shed` as a rolling-release distribution of Clojure tools.
-If a tool gains real traction, , I'll consider spinning it out into its own repo to treat backwards compatibility seriously.
+If a tool gains real traction, I'll consider giving the tool its own repo to treat backwards compatibility seriously.
 
 But for now, I minimize the number of moving pieces (number of repos) to reduce friction with experimentation.
 If you want to try something out, you have a few options.
