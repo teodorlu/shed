@@ -9,8 +9,8 @@ I may push breaking changes.
 I may push bugs.
 But when I push bugs, I also break my daily driver, so I prefer to avoid that.
 Think of `teodorlu/shed` as a rolling-release distribution of Clojure tools.
-If some of this stuff actually gets good & use, I'll consider spinning it out into its own thing.
-But for now, I prefer to minimize moving pieces (repos) to reduce all possible friction in order to get started.
+If a tool gains real traction, , I'll consider spinning it out into its own repo to treat backwards compatibilty seriously.
+But for now, I prefer to minimize moving pieces (number of repos repos) to reduce any experimentation friction.
 
 If you want to use these tools, you have a few options.
 
