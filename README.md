@@ -44,7 +44,7 @@ If you want to try something out, you have a few options.
 
 ## Install one or more scripts
 
-The recommended way to install these scripts is with [babashka/bbin][babashka-bbin].
+I recommend using [babashka/bbin][babashka-bbin] to install scripts from `teodorlu/shed`.
 
 [babashka-bbin]: https://github.com/babashka/bbin
 
