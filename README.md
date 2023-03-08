@@ -79,3 +79,9 @@ I recommend using [babashka/bbin][babashka-bbin] to install scripts from `teodor
     cd shed
     ./src/teodorlu/shed/install.clj
 
+, then you can
+
+    ,browsetxt
+    ,month
+
+, etc.
