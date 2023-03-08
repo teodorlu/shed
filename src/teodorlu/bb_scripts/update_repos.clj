@@ -62,6 +62,12 @@
     [type rate])
   ;; => ["test" 0.1]
 
+  (let [m {:type "test" :meta {:rate 0.1}}
+        f (fn [{:keys [type] {:keys [rate]} :meta}] [type rate])]
+    (f m))
+  ;; => ["test" 0.1]
+
+
   )
 
 (defn -main [& args]
