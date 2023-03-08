@@ -1,3 +1,4 @@
-{:deps {org.babashka/cli {:mvn/version "0.6.44"}
+{:paths ["src" "contrib"]
+ :deps {org.babashka/cli {:mvn/version "0.6.44"}
         babashka/process {:mvn/version "0.4.16"}
         babashka/fs {:mvn/version "0.2.16"}}}

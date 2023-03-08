@@ -1,3 +1,51 @@
+# Teodor's experimental lab
+
+Stability: potentially very unstable.
+I'm using tools here as my daily driver, and may push breaking changes to master.
+You're very much welcome to use the things I post here, though.
+Here are some options:
+
+1. Follow me on master and hope for the best.
+   Minimal effort for updates, but potential breakage.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Teodor's Babashka scripts
 
 A collection of Babashka scripts. Feel free to share / copy / use at your pleasure.
