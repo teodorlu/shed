@@ -1,7 +1,7 @@
 # Teodor's Clojure shed
 
 A collection of CLI and TUI tools made with Clojure.
-Purpose: experiment with workflow.
+Purpose: make it as easy as humanly possible to experiment with personal terminal workflows.
 
 ## Rationale
 
