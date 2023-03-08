@@ -4,8 +4,8 @@
    [babashka.process :refer [shell]]
    [clojure.string :as str]))
 
-(defn -main [repo]
-  (shell ["teod-git-clone" repo]))
+(defn -main [& argv]
+  (apply shell "teod-git-clone" argv))
 
 (comment
   (vec (for [s ["clone repo"
