@@ -18,5 +18,5 @@ That feels great.
 | mess.clj       | archived                                        | 0       |
 | pandoc-toolbox | ??                                              | ??      |
 | utils          | shoud be moved to shed, migrated from clj to bb | good!   |
-| solid          |                                                 | ??      |
-| lighthouse     |                                                 | ??      |
+| solid          | archived                                        | ??      |
+| lighthouse     | archived                                        | ??      |
