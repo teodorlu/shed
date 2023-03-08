@@ -9,7 +9,7 @@ Purpose: make it as easy as possible to experiment with personal terminal workfl
 I'm using these tools to drive my daily work, and I prefer to avoid branching.
 I may push breaking changes.
 I may push bugs.
-But when I push bugs, I also break my daily driver, so I prefer to avoid that.
+But when I push bugs, I also break my daily driver, so I try to avoid breakage.
 Think of `teodorlu/shed` as a rolling-release distribution of Clojure tools.
 If a tool gains real traction, , I'll consider spinning it out into its own repo to treat backwards compatibilty seriously.
 But for now, I prefer to minimize moving pieces (number of repos repos) to reduce any experimentation friction.
