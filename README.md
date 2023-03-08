@@ -61,7 +61,7 @@ Any changes you make to the Clojure source files will now be reflected instantly
     cd shed
     bbin install . --as ,update-repos --main-opts '["-m" "teodorlu.shed.update-repos/-main"]'
 
-### Install tailored for Teodor
+### Tailored for Teodor
 
     git clone https://github.com/teodorlu/shed.git
     cd shed
