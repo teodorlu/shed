@@ -62,9 +62,10 @@
 (defn pandoc-inline->plain
   "Note: this function is SLOW.
 
-  It shells out to pandoc, which causes tremendous overhead. A pure Clojure og
-  pure java implementation would be way faster. A pod would help too, then we
-  don't have to restart pandoc."
+  It shells out to pandoc for single links, which causes tremendous overhead
+  starting and stopping functions. A pure Clojure og pure java implementation
+  would be way faster. A pod would help too, then we don't have to restart
+  pandoc."
   [inline]
   (when (vector? inline)
     (let [data {:pandoc-api-version [1 22 2 1], :meta {}, :blocks [{:t "Para" :c  inline}]}
