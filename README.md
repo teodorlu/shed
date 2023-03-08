@@ -31,11 +31,11 @@ If you want to try something out, you have a few options.
 
 ## Tools
 
-| script         | purpose                           | working?           | used daily? |
-|----------------|-----------------------------------|--------------------|-------------|
-| [quickcd]      | navigate quicker than with =cd=   | no, experimental   | no          |
-| [update-repos] | batch-update git repos            | works, rough edges | no          |
-| [browsetxt]    | plaintext browser because why not | yes                | no            |
+| script         | purpose                         | working?           | used daily? |
+|----------------|---------------------------------|--------------------|-------------|
+| [quickcd]      | navigate quicker than with =cd= | no, experimental   | no          |
+| [update-repos] | batch-update git repos          | works, rough edges | no          |
+| [browsetxt]    | web browser because why not     | yes                | no          |
 
 [quickcd]: https://github.com/teodorlu/shed/tree/master/contrib/quickcd
 [update-repos]: https://github.com/teodorlu/shed/tree/master/contrib/update-repos
