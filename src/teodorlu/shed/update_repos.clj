@@ -66,7 +66,20 @@
         f (fn [{:keys [type] {:keys [rate]} :meta}] [type rate])]
     (f m))
   ;; => ["test" 0.1]
+
+
+  ;; destructuring:
+  (let [{:keys [type] {:keys [rate]} :meta}
+        {:type "test" :meta {:rate 0.1}}]
+    [type rate])
+
+  ;; straightforward:
+  (let [data {:type "test" :meta {:rate 0.1}}]
+    [(:type data) (:rate (:meta data))])
+
+
   )
+
 
 (defn -main [& _args]
   (do-update-repos! (fs/cwd)))
