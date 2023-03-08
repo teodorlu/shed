@@ -2,7 +2,7 @@
 
 A collection of CLI and TUI tools made with Clojure.
 
-Purpose: make it as easy as possible to experiment with personal terminal workflows.
+Purpose: make it as easy as possible to experiment with personal terminal workflow.
 
 ## Rationale
 
