@@ -70,5 +70,5 @@
 
   )
 
-(defn -main [& args]
+(defn -main [& _args]
   (do-update-repos! (fs/cwd)))
