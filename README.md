@@ -6,7 +6,7 @@ Purpose: make it as easy as possible to experiment with personal terminal workfl
 
 ## Rationale
 
-I'm using these tools to drive my daily work, and I prefer to work without branching.
+I'm using these tools to drive my daily work, and I prefer to avoid branching.
 I may push breaking changes.
 I may push bugs.
 But when I push bugs, I also break my daily driver, so I prefer to avoid that.
