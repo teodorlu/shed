@@ -61,6 +61,11 @@ The recommended way to install these scripts is with [babashka/bbin][babashka-bb
 
 <!-- Any changes you make to the Clojure source files will now be reflected instantly in your locally installed scripts. -->
 
+### Install a single script from Github with bbin
+
+    bbin install io.github.teodorlu/shed --latest-sha --as browsetxt \
+        --main-opts '["-m" "teodorlu.shed.browsetxt/-main"]'
+
 ### Install a single script from source with bbin
 
     git clone https://github.com/teodorlu/shed.git
