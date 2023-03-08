@@ -27,6 +27,7 @@
   (install-script! "browsetxt")
   (install-script! "month")
   (install-script! "path-lines")
+  (install-script! "quick-clone")
   (install-script! "ukenummer")
   (install-script! "update-repos")
   ,)
