@@ -75,6 +75,8 @@ The recommended way to install these scripts is with [babashka/bbin][babashka-bb
 
 ### Tailored install for Teodor
 
+Installs _all the scripts_
+
     git clone https://github.com/teodorlu/shed.git
     cd shed
     ./src/teodorlu/shed/install.clj
