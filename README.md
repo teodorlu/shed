@@ -37,8 +37,7 @@ If you want to use these tools, you have a few options.
 [quickcd]: https://github.com/teodorlu/shed/tree/master/contrib/quickcd
 [update-repos]: https://github.com/teodorlu/shed/tree/master/contrib/update-repos
 
-
-## Installing scripts
+## Install one or more scripts
 
 The recommended way to install these scripts is with [babashka/bbin][babashka-bbin].
 
