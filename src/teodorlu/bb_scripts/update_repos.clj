@@ -41,5 +41,28 @@
   ;; => 245
   )
 
+(comment
+  ;; destructuring question on Slack
+  ;; https://clojurians.slack.com/archives/C053AK3F9/p1678280301686469
+
+  (let [x {:type "test" :meta {:rate 0.1}}
+        {type :type} x
+        {{rate :rate} :meta} x
+        ]
+    [type rate])
+  ;; => ["test" 0.1]
+
+  (let [{type :type {:keys [rate]} :meta}
+        {:type "test" :meta {:rate 0.1}}]
+    [type rate])
+  ;; => ["test" 0.1]
+
+  (let [{:keys [type] {:keys [rate]} :meta}
+        {:type "test" :meta {:rate 0.1}}]
+    [type rate])
+  ;; => ["test" 0.1]
+
+  )
+
 (defn -main [& args]
   (do-update-repos! (fs/cwd)))
