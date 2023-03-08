@@ -4,6 +4,25 @@
    [babashka.process :refer [shell]]
    [clojure.string :as str]))
 
+;; this script requires a shell wrapper.
+;;
+;; Something like this:
+;;
+;;     with_shelleval() {
+;;       while read -r line; do
+;;         if echo "$line" | grep '^!SHELLEVAL' >/dev/null; then
+;;           cmd=$(echo "$line" | sed 's/!SHELLEVAL//g')
+;;           eval "$cmd"
+;;         else
+;;           echo "$line"
+;;         fi
+;;       done
+;;     }
+
+;;     ,clonecd() {
+;;         ,quick-clone "$@" | with_shelleval
+;;     }
+
 (defn -main [& argv]
   (let [{:keys [out exit]}
         (apply shell {:out :string} "teod-git-clone" argv)]
