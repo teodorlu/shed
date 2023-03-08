@@ -2,7 +2,7 @@
 
 Hypertext as plaintext.
 
-## Rationale
+## Motivation
 
 Demonstrate that Clojure, Pandoc and FZF is enought to create a minimal web browser
 
