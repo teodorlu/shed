@@ -77,7 +77,21 @@
   (let [data {:type "test" :meta {:rate 0.1}}]
     [(:type data) (:rate (:meta data))])
 
+  )
 
+(comment
+
+  ;; https://clojurians.slack.com/archives/C053AK3F9/p1678288277210489
+
+  [:app :data :people 12346]
+  [:app :data :things 123456]
+  (let [some-data {:app {:data {:people {12346 {:name "Ryan"}}
+                                :things {123456 {:make "Toyota" :color "Blue"}}}}}
+        people (fn [data id] (get-in data [:app :data :people id]))
+        things (fn [data id] (get-in data [:app :data :things id]))]
+    [(people some-data 12346)
+     (things some-data 123456)])
+  ;; => [{:name "Ryan"} {:make "Toyota", :color "Blue"}]
   )
 
 
