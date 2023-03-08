@@ -1,2 +1,3 @@
 {:deps {io.github.teodorlu/shed {:local/root "."}}
- :bbin/bin {update-repos {:main-opts ["-m" "teodorlu.shed.update-repos/-main"]}}}
+ :bbin/bin {update-repos {:main-opts ["-m" "teodorlu.shed.update-repos/-main"]}
+            browsetxt {:main-opts ["-m" "teodorlu.shed.browsetxt/-main"]}}}
