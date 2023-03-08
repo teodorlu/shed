@@ -27,7 +27,7 @@
   (let [{:keys [out exit]}
         (apply shell {:out :string} "teod-git-clone" argv)]
     (if (= 0 exit)
-      (println "!SHELLEVAL" (last (str/split-lines out)))
+      (println "!SHELLEVAL cd" (last (str/split-lines out)))
       (println (str/trim out)))))
 
 (comment
