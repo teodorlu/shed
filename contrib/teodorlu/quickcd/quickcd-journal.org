@@ -1,0 +1,18 @@
+#+title: quickcd quickjournal.
+
+* 2023-02-15
+** Where's the hardest point?
+I believe in [[https://play.teod.eu/enter-the-forest-at-its-darkest-point/][entering the forest at its darkest point]].
+What does this mean?
+
+1. I've wrappped fzf from babashka before
+   1. https://github.com/teodorlu/neil-quickadd
+   2. https://github.com/teodorlu/browsetxt
+2. I've never written a shell wrapper for a script that enables access to the parent shell.
+
+A simple approach: eval each line without checking anything.
+A less simple approach: have some keyword / line prefix that signifies that this line should be evaluated.
+
+Potential problem: will the shell wrapper break fzf integration?
+How will that even work?
+Does fzf use STDOUT or STDERR?
