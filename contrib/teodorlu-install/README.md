@@ -16,3 +16,15 @@ Then I can quickly discover:
 
 I also don't need to worry about my own stuff vs other people's stuff.
 =cd= is builtin, =,cd= is mine.
+
+## Shed script for installing shed scripts with commas
+
+From the project root, run
+
+    bb src/teodorlu/shed/install.clj
+
+Done!
+
+## Old, deprecated bash script
+
+    ./contrib/teodorlu-install/install.sh

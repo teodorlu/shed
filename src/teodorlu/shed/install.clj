@@ -20,6 +20,5 @@
 
 ;; trigger main when this script is run as an executable
 ;; see babashka book: https://book.babashka.org/#main_file
-
 (when (= *file* (System/getProperty "babashka.file"))
   (-main))
