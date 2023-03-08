@@ -6,9 +6,9 @@
 
 ;; a shed script to install all the shed scripts, lol
 ;;
-;; this file is executable, and can be run independently from this project:
+;; this file is executable, and can be run as a standalone babashka script:
 ;;
-;;    ./src/teodorlu/shed/install.clj
+;;    bb ./src/teodorlu/shed/install.clj
 
 (def project-root (str/trim (:out (shell {:out :string}
                                          "git rev-parse --show-toplevel"))))
