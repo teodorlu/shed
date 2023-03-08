@@ -1,4 +1,4 @@
-# Teodor's clojure shed
+# Teodor's Clojure shed
 
 Stability: potentially very unstable.
 I'm using tools here as my daily driver, and may push breaking changes to master.
