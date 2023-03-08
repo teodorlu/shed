@@ -5,7 +5,11 @@
    [clojure.string :as str]))
 
 (defn -main [& argv]
-  (apply shell "teod-git-clone" argv))
+  (let [{:keys [out exit]}
+        (apply shell {:out :string} "teod-git-clone" argv)]
+    (if (= 0 exit)
+      (println "!SHELLEVAL" (last (str/split-lines out)))
+      (println (str/trim out)))))
 
 (comment
   (vec (for [s ["clone repo"
