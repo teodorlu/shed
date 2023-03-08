@@ -29,15 +29,17 @@ If you want to try something out, you have a few options.
 [contrib/]: ./contrib/
 [clojurians-slack]: https://clojurians.slack.com/
 
-## Scripts
+## Tools
 
-| script         | purpose                         | working?           | used daily? |
-|----------------|---------------------------------|--------------------|-------------|
-| [quickcd]      | navigate quicker than with =cd= | no, experimental   | no          |
-| [update-repos] | batch-update git repos          | works, rough edges | no          |
+| script         | purpose                           | working?           | used daily? |
+|----------------|-----------------------------------|--------------------|-------------|
+| [quickcd]      | navigate quicker than with =cd=   | no, experimental   | no          |
+| [update-repos] | batch-update git repos            | works, rough edges | no          |
+| [browsetxt]    | plaintext browser because why not | yes                | no            |
 
 [quickcd]: https://github.com/teodorlu/shed/tree/master/contrib/quickcd
 [update-repos]: https://github.com/teodorlu/shed/tree/master/contrib/update-repos
+[browsetxt]: https://github.com/teodorlu/shed/tree/master/contrib/browsetxt
 
 ## Install one or more scripts
 
