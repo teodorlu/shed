@@ -1,0 +1,22 @@
+#+title: Bikeshedding in action: a journal
+
+* 2023-03-08
+** =teodorlu/shed= - it lives
+Yay!
+** This feels nice.
+I've already been able to archive a bunch of repos.
+That feels great.
+** List of "repos living elsewhere"
+| repo           | status                                          | quality |
+|----------------+-------------------------------------------------+---------|
+| quickcd        | moved to shed                                   | ??      |
+| bb-select-tui  | archived, redirected to shed                    | ??      |
+| neil-quickadd  | deserves to be its own thing, I think!          | good!   |
+| hello-world.bb | deleted                                         | 0       |
+| browsetxt      | own repo, consider moving to shed               | ??      |
+| pandoc-edn     | own repo, consider moving to shed               | ???     |
+| mess.clj       | archived                                        | 0       |
+| pandoc-toolbox | ??                                              | ??      |
+| utils          | shoud be moved to shed, migrated from clj to bb | good!   |
+| solid          |                                                 | ??      |
+| lighthouse     |                                                 | ??      |
