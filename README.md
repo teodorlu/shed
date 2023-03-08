@@ -31,10 +31,10 @@ If you want to try something out, you have a few options.
 
 ## Scripts
 
-| script         | purpose                         | completion         | usage   |
-|----------------|---------------------------------|--------------------|---------|
-| [quickcd]      | navigate quicker than with =cd= | experimental       | no      |
-| [update-repos] | batch-update git repos          | works, rough edges | minimal |
+| script         | purpose                         | working?           | in active use? |
+|----------------|---------------------------------|--------------------|----------------|
+| [quickcd]      | navigate quicker than with =cd= | no, experimental   | no             |
+| [update-repos] | batch-update git repos          | works, rough edges | no             |
 
 [quickcd]: https://github.com/teodorlu/shed/tree/master/contrib/quickcd
 [update-repos]: https://github.com/teodorlu/shed/tree/master/contrib/update-repos
