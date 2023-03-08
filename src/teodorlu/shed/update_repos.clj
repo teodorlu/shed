@@ -1,4 +1,4 @@
-(ns teodorlu.bb-scripts.update-repos
+(ns teodorlu.shed.update-repos
   (:require
    [babashka.fs :as fs]
    [babashka.process :refer [shell]]

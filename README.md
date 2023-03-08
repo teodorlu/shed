@@ -28,18 +28,23 @@ The recommended way to install these scripts is with [babashka/bbin][babashka-bb
 
 [babashka-bbin]: https://github.com/babashka/bbin
    
-### To install from Github `master` with bbin:
+### Install all scripts from Github `master` with bbin:
 
-    bbin install io.github.teodorlu/bb-scripts --latest-sha
+    bbin install io.github.teodorlu/shed --latest-sha
 
-### To install from source with bbin:
+### Install all scripts from source with bbin:
 
-    git clone https://github.com/teodorlu/bb-scripts.git
-    cd bb-scripts
+    git clone https://github.com/teodorlu/shed.git
+    cd shed
     bbin install .
 
 Any changes you make to the Clojure source files will now be reflected instantly in your locally installed scripts.
 
+### Install a single script from source with bbin
+
+    git clone https://github.com/teodorlu/shed.git
+    cd shed
+    bbin install . --as ,update-repos --main-opts '["-m" "teodorlu.shed.update-repos/-main"]'
 
 ## `update-repos`
 
