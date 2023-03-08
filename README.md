@@ -20,12 +20,13 @@ If you want to use these tools, you have a few options.
 2. Follow me on master.
    Minimal effort for updates, but potential breakage.
    And please let me know if you're hit by such breakage!
-   Clojurians Slack or Github issue are good options.
+   [Clojurians Slack][clojurians-slack] or Github issue are good options.
 3. Maintain your own fork.
    Lets you update at your own pace, and also experiment with stuff.
    If you make something nice, we can consider putting it in [contrib/]
 
 [contrib/]: ./contrib/
+[clojurians-slack]: https://clojurians.slack.com/
 
 ## Scripts
 
