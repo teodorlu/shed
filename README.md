@@ -12,7 +12,7 @@ Think of `teodorlu/shed` as a rolling-release distribution of Clojure tools.
 If a tool gains real traction, , I'll consider spinning it out into its own repo to treat backwards compatibilty seriously.
 But for now, I prefer to minimize moving pieces (number of repos repos) to reduce any experimentation friction.
 
-If you want to use these tools, you have a few options.
+If you want to try something out, you have a few options.
 
 1. Copy-paste individual functions.
    If you find something you like, just copy the code.
