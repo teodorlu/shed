@@ -1,0 +1,27 @@
+#+title: quickclonecd
+
+=,clonecd teodorlu/shed= - git clone teodorlu/shed into ~/dev/teodorlu/shed, and cd into it.
+
+Target: one shell function wrapping one Clojure function.
+
+* 2023-03-08
+** status
+I have a /python/ binary that I call from a shell function.
+I don't want to take a too large step.
+
+Here's a plan:
+
+1. Keep the python script as-is
+2. Wrap it in with babashka
+3. Pick out the last line of the output
+4. Shellexec that line.
+
+Then I can:
+
+1. Call the clone functionality from Clojure
+2. Experiment with my shellexec bash code.
+3. Delete some messy bash code.
+** proposed names
+| =,clonecd=         | shell wrapper   |
+| =,git-quick-clone= | babashka binary |
+| =teod-git-clone=   | python script   |
