@@ -65,5 +65,5 @@ Any changes you make to the Clojure source files will now be reflected instantly
 
     git clone https://github.com/teodorlu/shed.git
     cd shed
-    contrib/teodorlu/install.sh
+    contrib/teodorlu-install/install.sh
 
