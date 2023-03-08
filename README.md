@@ -61,21 +61,19 @@ I recommend using [babashka/bbin][babashka-bbin] to install scripts from `teodor
 
 <!-- Any changes you make to the Clojure source files will now be reflected instantly in your locally installed scripts. -->
 
-### Install a single script from Github with bbin
+### Install a script from Github with bbin
 
     bbin install io.github.teodorlu/shed --latest-sha --as browsetxt \
         --main-opts '["-m" "teodorlu.shed.browsetxt/-main"]'
 
-### Install a single script from source with bbin
+### Install a script from source with bbin
 
     git clone https://github.com/teodorlu/shed.git
     cd shed
     bbin install . --as ,update-repos \
         --main-opts '["-m" "teodorlu.shed.update-repos/-main"]'
 
-### Tailored install for Teodor
-
-Installs _all the scripts_
+### Install _all the scripts_ with predefined local script names
 
     git clone https://github.com/teodorlu/shed.git
     cd shed
