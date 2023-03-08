@@ -56,3 +56,17 @@
      (things some-data 123456)])
   ;; => [{:name "Ryan"} {:make "Toyota", :color "Blue"}]
   )
+
+(comment
+  ;; 2023-03-08
+  ;; exploring how babashka.process/shell really works
+
+  (let [shell babashka.process/shell]
+    (prn "works:")
+    (shell ["bbin" "ls"])
+
+    (prn "works:")
+    (shell {} "bbin" "ls")
+
+    (prn "crashes:")
+    (shell {} ["bbin" "ls"])))

@@ -14,9 +14,14 @@
   ([opts s]
    (shell (merge {:dir project-root} opts) s)))
 
+(defn install-script! [as main-opts]
+  (shell-project-root (str/join " " ["bbin" "install" "." "--as" as "--main-opts" main-opts])))
+
 (defn -main [& _args]
-  (shell-project-root "bbin install . --as ,update-repos --main-opts '[\"-m\" \"teodorlu.shed.update-repos/-main\"]'")
-  (shell-project-root "bbin install . --as ,browsetxt    --main-opts '[\"-m\" \"teodorlu.shed.browsetxt/-main\"]'"))
+  (install-script! ",update-repos" "'[\"-m\" \"teodorlu.shed.update-repos/-main\"]'")
+  (install-script! ",browsetxt"    "'[\"-m\" \"teodorlu.shed.browsetxt/-main\"]'")
+  (install-script! ",path-lines"   "'[\"-m\" \"teodorlu.shed.path-lines/-main\"]'")
+  )
 
 ;; trigger main when this script is run as an executable
 ;; see babashka book: https://book.babashka.org/#main_file
