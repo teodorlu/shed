@@ -65,7 +65,8 @@ The recommended way to install these scripts is with [babashka/bbin][babashka-bb
 
     git clone https://github.com/teodorlu/shed.git
     cd shed
-    bbin install . --as ,update-repos --main-opts '["-m" "teodorlu.shed.update-repos/-main"]'
+    bbin install . --as ,update-repos \
+        --main-opts '["-m" "teodorlu.shed.update-repos/-main"]'
 
 ### Tailored install for Teodor
 
