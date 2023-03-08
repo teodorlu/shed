@@ -1,8 +1,10 @@
 # Teodor's Clojure shed
 
-Stability: potentially very unstable.
-I'm using tools here as my daily driver, and may push breaking changes to master.
-But that breaks my daily workflow, so I want to avoid that.
+Stability: unstable.
+I'm using these tools to drive my daily work, and I prefer to work without branching.
+I may push breaking changes.
+I may push bugs.
+But when I push bugs, I also break my daily driver, so I prefer to avoid that.
 Think of `teodorlu/shed` as a rolling-release distribution of Clojure tools.
 If some of this stuff actually gets good & use, I'll consider spinning it out into its own thing.
 But for now, I prefer to minimize moving pieces (repos) to reduce all possible friction in order to get started.
@@ -45,6 +47,12 @@ Any changes you make to the Clojure source files will now be reflected instantly
     git clone https://github.com/teodorlu/shed.git
     cd shed
     bbin install . --as ,update-repos --main-opts '["-m" "teodorlu.shed.update-repos/-main"]'
+
+### Install tailored for Teodor
+
+    git clone https://github.com/teodorlu/shed.git
+    cd shed
+    contrib/teodorlu/install.sh
 
 ## `update-repos`
 
