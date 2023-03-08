@@ -20,3 +20,12 @@ That feels great.
 | utils          | shoud be moved to shed, migrated from clj to bb | good!   |
 | solid          | archived                                        | ??      |
 | lighthouse     | archived                                        | ??      |
+** again
+| repo           | status                                          |
+|----------------+-------------------------------------------------|
+| quickcd        | moved to shed                                   |
+| neil-quickadd  | deserves to be its own thing, I think!          |
+| browsetxt      | moved to shed                                   |
+| utils          | shoud be moved to shed, migrated from clj to bb |
+
+No more WIP!
