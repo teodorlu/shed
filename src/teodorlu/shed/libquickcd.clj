@@ -16,14 +16,16 @@
     (when (= 0 (:exit fzf-result))
       (str/trim (:out fzf-result)))))
 
+(def ^:dynamic *current-directory* (fs/cwd))
+
 (defn walk-loop
   [{:keys [start next]}]
   (loop [loc start]
-    (if-let [next-loc (fzf (next loc))]
+    (if-let [next-loc (next loc)]
       (recur next-loc)
       (babashka.process/exec {} (or (System/getenv "SHELL") "bash")))))
 
 (defn -main [& args]
   (walk-loop {:start (or (first args) ".")
-              :next  (fn [loc] (sort (map str (fs/list-dir loc))))})
+              :next  (fn [loc] (fzf (sort (map str (fs/list-dir loc)))))})
   ,)
