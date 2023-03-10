@@ -27,8 +27,3 @@
   (walk-select-loop {:start (or (first args) ".")
                      :next  (fn [loc] (sort (map str (fs/list-dir loc))))})
   ,)
-
-;; It would be interesting to try the same pattern from Emacs.
-;;
-;;   List next options: lines in a buffer.
-;;   Pick next: RET
