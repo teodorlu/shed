@@ -13,11 +13,10 @@
     (when (= 0 (:exit fzf-result))
       (str/trim (:out fzf-result)))))
 
-(defn stupidless [s]
+(defn lessless [s]
   (println s)
   (println "Press ENTER to continue")
-  (read-line)
-  )
+  (read-line))
 
 (defn walk-show-loop-with-exit
   [start show next-loc-options]
@@ -28,7 +27,7 @@
 
 (defn animal-walk [start-loc]
   (walk-show-loop-with-exit start-loc
-                            stupidless
+                            lessless
                             (fn [loc] ["dog" "cat" "cangaroo"])))
 
 (defn -main [& _args]
