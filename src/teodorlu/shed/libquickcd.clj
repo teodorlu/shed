@@ -13,11 +13,6 @@
     (when (= 0 (:exit fzf-result))
       (str/trim (:out fzf-result)))))
 
-(defn lessless [s]
-  (println s)
-  (println "Press ENTER to continue")
-  (read-line))
-
 (defn walk-show-loop
   [start show next-loc-options]
   (loop [loc start]
