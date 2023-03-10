@@ -13,17 +13,17 @@
 
 (defn fzf [choices]
   (let [fzf-result (shell {:out :string :in (str/join "\n" choices) :continue true} "fzf")]
-    (if (= 0 (:exit fzf-result))
-      (str/trim (:out fzf-result))
-      (babashka.process/exec {} (or (System/getenv "SHELL") "bash")))))
+    (when (= 0 (:exit fzf-result))
+      (str/trim (:out fzf-result)))))
 
-(defn walk-select-loop
+(defn walk-loop
   [{:keys [start next]}]
   (loop [loc start]
-    (when-let [next-loc (fzf (next loc))]
-      (recur next-loc))))
+    (if-let [next-loc (fzf (next loc))]
+      (recur next-loc)
+      (babashka.process/exec {} (or (System/getenv "SHELL") "bash")))))
 
 (defn -main [& args]
-  (walk-select-loop {:start (or (first args) ".")
-                     :next  (fn [loc] (sort (map str (fs/list-dir loc))))})
+  (walk-loop {:start (or (first args) ".")
+              :next  (fn [loc] (sort (map str (fs/list-dir loc))))})
   ,)
