@@ -51,8 +51,4 @@
 
 (defn -main [& _args]
   (file-walk (str (fs/cwd)))
-  #_#_
-
-  (prn "libquickcd")
-  (shell "ls")
   ,)
