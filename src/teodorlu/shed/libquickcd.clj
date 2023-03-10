@@ -13,8 +13,9 @@
 
 (defn fzf [choices]
   (let [fzf-result (shell {:out :string :in (str/join "\n" choices) :continue true} "fzf")]
-    (when (= 0 (:exit fzf-result))
-      (str/trim (:out fzf-result)))))
+    (if (= 0 (:exit fzf-result))
+      (str/trim (:out fzf-result))
+      (babashka.process/exec {} (or (System/getenv "SHELL") "bash")))))
 
 (defn walk-select-loop
   [{:keys [start next]}]
