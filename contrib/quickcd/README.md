@@ -20,19 +20,13 @@ First, install the Clojure script:
 
 Then add the shell wrapper to your shell rc files:
 
-    with_shelleval() {
-      while read -r line; do
-        if echo "$line" | grep '^!SHELLEVAL' >/dev/null; then
-          cmd=$(echo "$line" | sed 's/!SHELLEVAL//g')
-          eval "$cmd"
-        else
-          echo "$line"
-        fi
-      done
-    }
-
     ,cd() {
-      libquickcd "$@" | with_shelleval
+      exec ,libquickcd "$@"
     }
 
 Then start it off with `$ ,cd`.
+
+Why?
+Quickcd avoids creating a stack of shells and babashka instances waiting for each other by using shell `exec` / `babashka.process/exec`.
+If we didn't do this, you'd have to press `C-d` (`^D`) multiple times to shut down your terminal.
+We consider this a violation of your attention, and we strive to avoid those.
