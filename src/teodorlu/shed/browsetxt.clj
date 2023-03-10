@@ -40,7 +40,6 @@
 (defn walk-show-loop-with-exit
   [start show next-loc quit?]
   (loop [loc start]
-    ;; (prn [:on loc])
     (show loc)
     (when-let [next-loc (fzf-edn (next-loc loc) nil)]
       (when-not (quit? next-loc)
@@ -106,23 +105,23 @@
   )
 
 (defn url-walk [startpage opts]
-    (let [pager (cond (:bat-markdown opts) bat-markdown
-                      :else less)
-          show (fn [loc]
-                 (cond (:plain opts)
-                       (-> loc :url pandoc-url->plain pager)
+  (let [pager (cond (:bat-markdown opts) bat-markdown
+                    :else less)
+        show (fn [loc]
+               (cond (:plain opts)
+                     (-> loc :url pandoc-url->plain pager)
 
-                       :else
-                       (-> loc :url pandoc-url->md pager)))
-          next-loc (fn [loc]
-                     (concat [:quit loc]
-                             (for [target (page->links (:url loc))]
-                               (let [{:keys [url title]} target]
-                                 {:url url :title title}))))]
-      (walk-show-loop-with-exit {:url startpage}
-                                show
-                                next-loc
-                                (fn quit? [loc] (= :quit loc)))))
+                     :else
+                     (-> loc :url pandoc-url->md pager)))
+        next-loc (fn [loc]
+                   (concat [:quit loc]
+                           (for [target (page->links (:url loc))]
+                             (let [{:keys [url title]} target]
+                               {:url url :title title}))))]
+    (walk-show-loop-with-exit {:url startpage}
+                              show
+                              next-loc
+                              (fn quit? [loc] (= :quit loc)))))
 
 (defn -main [url & args]
   (url-walk url (cli/parse-opts args)))
