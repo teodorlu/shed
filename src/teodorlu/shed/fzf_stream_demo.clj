@@ -1,5 +1,6 @@
 (ns teodorlu.shed.fzf-stream-demo
-  (:require [babashka.process :refer [shell process]]))
+  (:require [babashka.process :refer [shell process]]
+            [babashka.fs :as fs]))
 
 ;; purpose: try streaming with fzf and babashka/process
 
@@ -27,7 +28,10 @@
 (defn -main [& _args]
   #_
   (stream-demo)
+  #_
   (demo-4)
+  (prn (type (babashka.fs/glob "." "**/*.clj")))
+  (prn (babashka.fs/glob "." "**/*.clj"))
   ,)
 
 ;; trigger main when this script is run as an executable
