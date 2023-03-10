@@ -25,6 +25,7 @@
 
 (defn -main [& _args]
   (install-script! "browsetxt")
+  (install-script! "libquickcd")
   (install-script! "month")
   (install-script! "path-lines")
   (install-script! "quick-clone")
