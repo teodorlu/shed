@@ -1,8 +1,7 @@
 (ns teodorlu.shed.libquickcd
   (:require
-   [babashka.process :refer [shell]]
-   [clojure.java.shell :as shell]
    [babashka.fs :as fs]
+   [babashka.process :refer [shell]]
    [clojure.string :as str]))
 
 ;; aimed to be called from a ,cd function
