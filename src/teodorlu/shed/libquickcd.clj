@@ -6,7 +6,9 @@
 
 ;; aimed to be called from a ,cd function
 ;;
-;; see https://github.com/teodorlu/shed/tree/master/contrib/quickcd/
+;; for installation instructions, see:
+;;
+;;   https://github.com/teodorlu/shed/tree/master/contrib/quickcd/
 
 (defn fzf [choices]
   (let [fzf-result (shell {:out :string :in (str/join "\n" choices) :continue true} "fzf")]
