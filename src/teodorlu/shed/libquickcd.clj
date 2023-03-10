@@ -13,14 +13,14 @@
     (when (= 0 (:exit fzf-result))
       (str/trim (:out fzf-result)))))
 
-(defn walk-pick-loop
-  [start next-loc-options]
+(defn walk-select-loop
+  [start next-loc]
   (loop [loc start]
-    (when-let [next-loc (fzf (next-loc-options loc))]
+    (when-let [next-loc (fzf (next-loc loc))]
       (recur next-loc))))
 
 (defn -main [& args]
-  (walk-pick-loop (or (first args) ".")
+  (walk-select-loop (or (first args) ".")
                   (fn [loc]
                     (sort (map str (fs/list-dir loc)))))
   ,)
