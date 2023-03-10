@@ -1,7 +1,16 @@
 # quickcd: walk around quickly
 
 Does it work?
-Not yet.
+Nope.
+
+## Problem: pager
+
+I'm sending commands to my shell because I need to be able to evaluate output.
+But when I'm invoking `less` from Clojure, it just terminates because it's output is being redirected.
+With `fzf`, I have no problems.
+
+Possible cause: `less` uses stdout, `fzf` uses stderr.
+In that case, possible solution: use a pager that writes to stderr instead.
 
 ## Installing
 
