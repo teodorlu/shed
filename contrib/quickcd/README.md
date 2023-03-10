@@ -22,12 +22,8 @@ Then add the shell wrapper to your shell rc files:
       done
     }
 
-    ,clonecd() {
-      ,quick-clone "$@" | with_shelleval
-    }
-
     ,cd() {
-      ,libquickcd "$@" | with_shelleval
+      libquickcd "$@" | with_shelleval
     }
 
 Then start it off with `$ ,cd`.
