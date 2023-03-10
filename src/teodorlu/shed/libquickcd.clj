@@ -2,6 +2,7 @@
   (:require
    [babashka.process :refer [shell]]
    [clojure.java.shell :as shell]
+   [babashka.fs :as fs]
    [clojure.string :as str]))
 
 ;; aimed to be called from a ,cd function
@@ -25,11 +26,9 @@
     (when-let [next-loc (fzf (next-loc-options loc))]
       (recur next-loc))))
 
-(defn animal-walk [start-loc]
-  (walk-show-loop-with-exit start-loc
-                            lessless
-                            (fn [loc] ["dog" "cat" "cangaroo"])))
-
-(defn -main [& _args]
-  (animal-walk "dog")
+(defn -main [& args]
+  (walk-show-loop-with-exit (or (first args) ".")
+                            (constantly nil)
+                            (fn [loc]
+                              (sort (map str (fs/list-dir loc)))))
   ,)
