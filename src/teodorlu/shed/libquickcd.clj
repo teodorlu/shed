@@ -19,7 +19,7 @@
   (println "Press ENTER to continue")
   (read-line))
 
-(defn walk-show-loop-with-exit
+(defn walk-show-loop
   [start show next-loc-options]
   (loop [loc start]
     (show loc)
@@ -27,8 +27,8 @@
       (recur next-loc))))
 
 (defn -main [& args]
-  (walk-show-loop-with-exit (or (first args) ".")
-                            (constantly nil)
-                            (fn [loc]
-                              (sort (map str (fs/list-dir loc)))))
+  (walk-show-loop (or (first args) ".")
+                  (constantly nil)
+                  (fn [loc]
+                    (sort (map str (fs/list-dir loc)))))
   ,)
