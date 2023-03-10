@@ -23,6 +23,6 @@
 
 (defn -main [& args]
   (walk-select-loop (or (first args) ".")
-                  (fn [loc]
-                    (sort (map str (fs/list-dir loc)))))
+                    (fn [loc]
+                      (sort (map str (fs/list-dir loc)))))
   ,)
