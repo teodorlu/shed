@@ -13,8 +13,11 @@
     (when (= 0 (:exit fzf-result))
       (str/trim (:out fzf-result)))))
 
-(defn less [s]
-  (shell {:in s} "less"))
+(defn stupidless [s]
+  (println s)
+  (println "Press ENTER to continue")
+  (read-line)
+  )
 
 (defn walk-show-loop-with-exit
   [start show next-loc-options]
@@ -25,20 +28,9 @@
 
 (defn animal-walk [start-loc]
   (walk-show-loop-with-exit start-loc
-                            less
+                            stupidless
                             (fn [loc] ["dog" "cat" "cangaroo"])))
 
-(defn bash [cmd]
-  (str/trim (:out (shell/sh "bash" "-c" cmd))))
-
 (defn -main [& _args]
-  #_
   (animal-walk "dog")
-  #_
-  (shell {:in "abc123\nanother"} "less")
-  #_
-  (fzf [:line-1 :line-2])
-
-  (bash "echo 123 | less >/dev/stderr")
-
   ,)
