@@ -35,7 +35,7 @@ If you want to try something out, you have a few options.
 | script         | purpose                         | working?           | used daily? |
 |----------------|---------------------------------|--------------------|-------------|
 | [browsetxt]    | web browser because why not     | yes                | no          |
-| [quickcd]      | navigate quicker than with `cd` | no, experimental   | no          |
+| [quickcd]      | navigate quicker than with `cd` | yeah, actually     | no          |
 | [update-repos] | batch-update git repos          | works, rough edges | no          |
 
 [quickcd]: https://github.com/teodorlu/shed/tree/master/contrib/quickcd
