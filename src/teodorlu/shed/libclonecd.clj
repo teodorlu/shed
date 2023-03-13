@@ -4,29 +4,15 @@
    [babashka.fs :as fs]
    [babashka.process :refer [shell]]))
 
-;; Usage
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; HOW TO INSTALL, HOW TO USE
 ;;
-;;   $,clonecd babashka/babashka
-;;   ... you have now cloned git@github.com:babashka/babashka.git, and cd'd into the repo.
-
-;; shell alias: ,clonecd
-;;
-;; this library does the heavy lifting
-;;
-;; we can implement ,clonecd in terms of libclonecd and shellexec
-
-;; Examples
-;;
-;;      $ libclonecd teodorlu/shed
-;;      !SHELLEVAL cd /home/teodorlu/dev/teodorlu/shed
-
-;; ignore parameterization while prototyping.
-;;
-;; git repos are stored in ~/dev/ORGANIZATION/PROJECT
-;;
-;; a REPOSPEC is ORG/PROJECT as a string, or {:org ORG :project PROJECT} as data
+;; See https://github.com/teodorlu/shed/tree/master/contrib/clonecd/README.org
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; MODULE DOCUMENTATION
+;;
+;; a REPOSPEC is ORG/PROJECT as a string, or {:org ORG :project PROJECT} as data
 
 (defn repospec->path [repospec]
   (let [{:keys [org project]} repospec]

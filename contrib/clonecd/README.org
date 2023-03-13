@@ -1,4 +1,4 @@
-#+title: quickclonecd
+#+title: clonecd
 
 =,clonecd teodorlu/shed= - git clone teodorlu/shed into ~/dev/teodorlu/shed, and cd into it.
 
