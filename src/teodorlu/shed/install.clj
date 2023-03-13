@@ -25,12 +25,14 @@
 
 (defn -main [& _args]
   (install-script! "browsetxt")
+  (install-script! "libclonecd")
   (install-script! "libquickcd")
   (install-script! "month")
   (install-script! "path-lines")
   (install-script! "quick-clone")
   (install-script! "ukenummer")
   (install-script! "update-repos")
+
   ,)
 
 ;; trigger main when this script is run as an executable
