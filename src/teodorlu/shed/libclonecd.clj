@@ -39,7 +39,7 @@
         (shell ["git" "clone" (repospec->git-clone-arg repospec)])
         (println "!SHELLEVAL cd" path)))))
 
-(defn parse-opts [argv]
+(defn str->repospec [argv]
   (let [[org project] (str/split (first argv) #"/")]
     {:org org :project project}))
 
@@ -53,5 +53,5 @@
     (println "invalid arguments:" (pr-str argv))
     (println "Usage: libclonecd ORG/REPO")
     (System/exit 1))
-  (let [opts (parse-opts argv)]
-    (run opts)))
+  (let [repospec (str->repospec argv)]
+    (run repospec)))
