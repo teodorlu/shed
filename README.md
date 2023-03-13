@@ -18,7 +18,7 @@ If you want to try something out, you have a few options.
 
 1. Copy-paste individual functions.
    If you find something you like, just copy the code.
-   I don't mind at all! :)
+   I don't mind!
 2. Follow me on master.
    Minimal effort for updates, but potential breakage.
    And please let me know if you're hit by such breakage!
