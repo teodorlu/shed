@@ -35,9 +35,9 @@ If you want to try something out, you have a few options.
 | script         | purpose                         | working?           | used daily? |
 |----------------|---------------------------------|--------------------|-------------|
 | [browsetxt]    | web browser because why not     | yes                | no          |
+| [clonecd]      | clone and cd into a repo        | yes                | yes         |
 | [quickcd]      | navigate quicker than with `cd` | yeah, actually     | no          |
 | [update-repos] | batch-update git repos          | works, rough edges | no          |
-| [clonecd]      | clone and cd into a repo        | yes                | yes         |
 
 [quickcd]: https://github.com/teodorlu/shed/tree/master/contrib/quickcd
 [clonecd]: https://github.com/teodorlu/shed/tree/master/contrib/clonecd
