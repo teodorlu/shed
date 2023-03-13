@@ -24,7 +24,3 @@ From the project root, run
     bb src/teodorlu/shed/install.clj
 
 Done!
-
-## Old, deprecated bash script
-
-    ./contrib/teodorlu-install/install.sh
