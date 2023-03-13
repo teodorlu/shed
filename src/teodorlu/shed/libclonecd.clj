@@ -4,6 +4,11 @@
    [babashka.fs :as fs]
    [babashka.process :refer [shell]]))
 
+;; Usage
+;;
+;;   $,clonecd babashka/babashka
+;;   ... you have now cloned git@github.com:babashka/babashka.git, and cd'd into the repo.
+
 ;; shell alias: ,clonecd
 ;;
 ;; this library does the heavy lifting

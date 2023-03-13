@@ -2,25 +2,38 @@
 
 =,clonecd teodorlu/shed= - git clone teodorlu/shed into ~/dev/teodorlu/shed, and cd into it.
 
-Target: one shell function wrapping one Clojure function.
+* Usage
 
-* 2023-03-08
-** status
-I have a /python/ binary that I call from a shell function.
-I don't want to take a too large step.
+#+begin_src shell
+,clonecd babashka/babashka
+#+end_src
 
-Here's a plan:
+This operation clones =https://github.com/babashka/babashka= into
+=~/dev/babashka/babashka= if necessary, then changes directory into that folder.
 
-1. Keep the python script as-is
-2. Wrap it in with babashka
-3. Pick out the last line of the output
-4. Shellexec that line.
+* Installing
+First, install the babashka script with bbin.
 
-Then I can:
+#+begin_src shell
+bbin install io.github.teodorlu/shed --as ,libclonecd \
+    --main-opts '["-m" "teodorlu.shed.libclonecd/-main"]'
+#+end_src
 
-1. Call the clone functionality from Clojure
-2. Experiment with my shellexec bash code.
-3. Delete some messy bash code.
-** proposed names
-| =,clonecd=            | shell wrapper   |
-| =,libclonecd=         | babashka binary |
+Then, setup the =,clonecd= shell wrapper.
+
+#+begin_src shell
+with_shelleval() {
+  while read -r line; do
+    if echo "$line" | grep '^!SHELLEVAL' >/dev/null; then
+      cmd=$(echo "$line" | sed 's/!SHELLEVAL//g')
+      eval "$cmd"
+    else
+      echo "$line"
+    fi
+  done
+}
+
+,clonecd() {
+  ,libclonecd "$@" | with_shelleval
+}
+#+end_src
