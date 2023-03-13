@@ -23,7 +23,4 @@ Then I can:
 3. Delete some messy bash code.
 ** proposed names
 | =,clonecd=            | shell wrapper   |
-| =,git-quick-clone=    | babashka binary |
-| or =,quick-git-clone= |                 |
-| or =,quick-clone=     |                 |
-| =teod-git-clone=      | python script   |
+| =,libclonecd=         | babashka binary |
