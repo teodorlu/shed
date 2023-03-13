@@ -25,7 +25,7 @@ If you want to try something out, you have a few options.
    [Clojurians Slack][clojurians-slack] or Github issue are good options.
 3. Maintain your own fork.
    Lets you update at your own pace, and also experiment with stuff.
-   If you make something nice, we can consider putting it in [contrib/]
+   If you make something nice, we can consider putting it in [contrib/].
 
 [contrib/]: ./contrib/
 [clojurians-slack]: https://clojurians.slack.com/
