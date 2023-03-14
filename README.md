@@ -62,7 +62,7 @@ I recommend using [babashka/bbin][babashka-bbin] to install scripts from teodorl
     bbin install . --as ,update-repos \
         --main-opts '["-m" "teodorlu.shed.update-repos/-main"]'
 
-### Install _all the scripts_ with predefined local script names
+### Install _all the scripts_ without choosing script name
 
     git clone https://github.com/teodorlu/shed.git
     cd shed
