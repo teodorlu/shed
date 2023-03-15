@@ -36,13 +36,16 @@ If you want to try something out, you have a few options.
 |----------------|---------------------------------|--------------------|-------------|
 | [browsetxt]    | web browser because why not     | yes                | no          |
 | [clonecd]      | clone and cd into a repo        | yes                | yes         |
+| [kanshibb]     | [kanshi] config as EDN          | yes                | weekly      |
 | [quickcd]      | navigate quicker than with `cd` | yeah, actually     | no          |
 | [update-repos] | batch-update git repos          | works, rough edges | no          |
 
-[quickcd]: https://github.com/teodorlu/shed/tree/master/contrib/quickcd
-[clonecd]: https://github.com/teodorlu/shed/tree/master/contrib/clonecd
-[update-repos]: https://github.com/teodorlu/shed/tree/master/contrib/update-repos
 [browsetxt]: https://github.com/teodorlu/shed/tree/master/contrib/browsetxt
+[clonecd]: https://github.com/teodorlu/shed/tree/master/contrib/clonecd
+[kanshi]: https://sr.ht/~emersion/kanshi/
+[kanshibb]: https://github.com/teodorlu/shed/tree/master/src/teodorlu/shed/kanshibb.clj
+[quickcd]: https://github.com/teodorlu/shed/tree/master/contrib/quickcd
+[update-repos]: https://github.com/teodorlu/shed/tree/master/contrib/update-repos
 
 ## Install one or more scripts
 
