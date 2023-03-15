@@ -1,4 +1,4 @@
-(ns teodorlu.shed.autokanshi
+(ns teodorlu.shed.kanshibb
   (:require
     [babashka.fs :as fs]))
 
