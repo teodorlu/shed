@@ -1,7 +1,9 @@
 (ns teodorlu.shed.kanshibb
   (:require
    [babashka.fs :as fs]
+   [babashka.process :refer [shell]]
    [clojure.edn :as edn]
+   clojure.java.shell
    clojure.pprint
    [clojure.string :as str]))
 
@@ -140,7 +142,19 @@
 (defn kanshibb-edn [_opts]
   (clojure.pprint/pprint (edn/read-string (slurp (str (fs/expand-home "~/.config/kanshibb/config.edn"))))))
 
+#_
+(defn kanshibb-reload-kanshi [_opts]
+  ;; doesn't work.
+  (shell "bash -c \"pkill kanshi; kanshi &; disown\""))
+;; instead, do:
+;;
+;;     $ pkill kanshi; kanshi &; disown
+;;
+;; from a shell.
+
 (defn -main [& args]
-  (cond (= (first args) "edn") (kanshibb-edn {})
-        (= (first args) "str") (kanshibb-str {})
-        :else (prn 'kanshibb-FTW)))
+  (cond (= (first args) "edn")           (kanshibb-edn {})
+        (= (first args) "str")           (kanshibb-str {})
+        ;; doesn't work.
+        ;; (= (first args) "reload-kanshi") (kanshibb-reload-kanshi {})
+        :else                            (prn 'kanshibb-FTW)))
