@@ -2,18 +2,28 @@
   (:require
     [babashka.fs :as fs]))
 
+;; why data?
+;;
+;; because then we can build UI for things we want.
+;;
+;; why code?
+;;
+;; because then we can remove boilerplate and allow for extension.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; example pure data config
 
 {:config
- [{:sections
-   [{:comment "laptop right of 34inch monitor"}
+ [{:profile
+   [{:description "laptop right of 34inch monitor"}
     {:output "Samsung Electric Company C34H89x H4ZN501754" :position "0,0"}
     {:output "Chimei Innolux Corporation 0x14F2 Unknown" :position "3440,360"}]}
-  {:sections
-   [{:comment "Laptop only"}
+  {:profile
+   [{:description "Laptop only"}
     {:output "Chimei Innolux Corporation 0x14F2 Unknown" :position "0,0"}]}
-  {:sections
-   [{:comment "laptop below 34inch monitor"}
+  {:profile
+   [{:description "laptop below 34inch monitor"}
     {:output "Samsung Electric Company C34H89x H4ZN501754" :position "0,0"}
     {:output "Chimei Innolux Corporation 0x14F2 Unknown" :position "760,1440"}]}]}
 
@@ -25,15 +35,15 @@
             (def position-right-of-34inc "3440,360")
             (def position-below-34inch "760,1440"))
   :config
-  [{:sections
-    [{:comment "laptop right of 34inch monitor"}
+  [{:profile
+    [{:description "laptop right of 34inch monitor"}
      {:output "Samsung Electric Company C34H89x H4ZN501754" :position "0,0"}
      {:output laptop-output :position position-right-of-34inch}]}
-   {:sections
-    [{:comment "Laptop only"}
+   {:profile
+    [{:description "Laptop only"}
      {:output "Chimei Innolux Corporation 0x14F2 Unknown" :position "0,0"}]}
-   {:sections
-    [{:comment "laptop below 34inch monitor"}
+   {:profile
+    [{:description "laptop below 34inch monitor"}
      {:output "Samsung Electric Company C34H89x H4ZN501754" :position "0,0"}
      {:output laptop-output :position position-below-34inch}]}]})
 
@@ -43,9 +53,9 @@
 (quote
  {:init (do (def legacy-config (slurp (fs/expand-home "~/kanshi-legacy-config.txt"))))
   :config
-  [{:raw-string legacy-config}
-   {:sections
-    [{:comment "laptop below 34inch monitor"}
+  [{:raw-str legacy-config}
+   {:profile
+    [{:description "laptop below 34inch monitor"}
      {:output "Samsung Electric Company C34H89x H4ZN501754" :position "0,0"}
      {:output laptop-output :position position-below-34inch}]}]})
 
