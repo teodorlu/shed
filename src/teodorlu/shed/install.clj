@@ -32,7 +32,7 @@
   (install-script! "quick-clone")
   (install-script! "ukenummer")
   (install-script! "update-repos")
-  (install-script! "autokanshi")
+  (install-script! "kanshibb")
 
   ,)
 

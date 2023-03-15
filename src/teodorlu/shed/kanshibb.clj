@@ -69,5 +69,10 @@
 
 ;; Then gradually add new monitors.
 
+(defn generate-config [_opts]
+  (prn 'kanshibb-FTW-yay)
+  (prn 'genconf)
+  )
+
 (defn -main [& _args]
-  (prn 'autokanshi-FTW-yay))
+  (generate-config {}))
