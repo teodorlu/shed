@@ -14,20 +14,25 @@
 ;;
 ;; a REPOSPEC is ORG/PROJECT as a string, or {:org ORG :project PROJECT} as data
 
-(defn repospec->path [repospec]
+(defn repospec->repo-path [repospec]
   (let [{:keys [org project]} repospec]
     (str (fs/expand-home "~/dev") "/" org "/" project)))
+
+(defn repospec->org-path [repospec]
+  (let [{:keys [org]} repospec]
+    (str (fs/expand-home "~/dev") "/" org)))
 
 (defn repospec->git-clone-arg [repospec]
   (let [{:keys [org project]} repospec]
     (str "git@github.com:" org "/" project ".git")))
 
 (defn run [repospec]
-  (let [path (repospec->path repospec)]
+  (let [path (repospec->repo-path repospec)]
     (if (fs/exists? path)
       (println "!SHELLEVAL cd" path)
       (do
-        (shell ["git" "clone" (repospec->git-clone-arg repospec) (repospec->path repospec)])
+        (fs/create-dirs (repospec->org-path repospec))
+        (shell ["git" "clone" (repospec->git-clone-arg repospec) (repospec->repo-path repospec)])
         (println "!SHELLEVAL cd" path)))))
 
 (defn str->repospec [argv]
