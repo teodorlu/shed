@@ -27,7 +27,7 @@
     (if (fs/exists? path)
       (println "!SHELLEVAL cd" path)
       (do
-        (shell ["git" "clone" (repospec->git-clone-arg repospec)])
+        (shell ["git" "clone" (repospec->git-clone-arg repospec) (repospec->path repospec)])
         (println "!SHELLEVAL cd" path)))))
 
 (defn str->repospec [argv]
