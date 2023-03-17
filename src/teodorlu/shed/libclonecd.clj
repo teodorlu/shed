@@ -12,7 +12,19 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; MODULE DOCUMENTATION
 ;;
-;; a REPOSPEC is ORG/PROJECT as a string, or {:org ORG :project PROJECT} as data
+;; a REPOSPEC represents a Github repository, qualified with its organization.
+;;
+;; Repospec as data:
+;;
+;;     {:org "babashka" :project "neil}
+;;
+;; Repospec as github http url:
+;;
+;;     https://github.com/babashka/neil
+;;
+;; Repospec as local folder:
+;;
+;;     ~/dev/babashka/neil
 
 (defn repospec->repo-path [repospec]
   (let [{:keys [org project]} repospec]
