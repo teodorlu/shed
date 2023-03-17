@@ -34,7 +34,7 @@
   (let [{:keys [org]} repospec]
     (str (fs/expand-home "~/dev") "/" org)))
 
-(defn repospec->git-clone-arg [repospec]
+(defn repospec->git-url [repospec]
   (let [{:keys [org project]} repospec]
     (str "git@github.com:" org "/" project ".git")))
 
@@ -44,7 +44,7 @@
       (println "!SHELLEVAL cd" path)
       (do
         (fs/create-dirs (repospec->org-path repospec))
-        (shell ["git" "clone" (repospec->git-clone-arg repospec) (repospec->repo-path repospec)])
+        (shell ["git" "clone" (repospec->git-url repospec) (repospec->repo-path repospec)])
         (println "!SHELLEVAL cd" path)))))
 
 (defn str->repospec [argv]
