@@ -51,13 +51,13 @@
   (let [[org project] (str/split repospec-str #"/")]
     {:org org :project project}))
 
-(defn valid-args? [argv]
+(defn valid-argv? [argv]
   (and argv
        (first argv)
        (= 2 (count (str/split (first argv) #"/")))))
 
 (defn -main [& argv]
-  (when (not (valid-args? argv))
+  (when (not (valid-argv? argv))
     (println "invalid arguments:" (pr-str argv))
     (println "Usage: libclonecd ORG/REPO")
     (System/exit 1))
