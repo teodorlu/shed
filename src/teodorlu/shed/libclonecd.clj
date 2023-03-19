@@ -47,8 +47,8 @@
         (shell ["git" "clone" (repospec->git-url repospec) (repospec->repo-path repospec)])
         (println "!SHELLEVAL cd" path)))))
 
-(defn str->repospec [argv]
-  (let [[org project] (str/split (first argv) #"/")]
+(defn str->repospec [repospec-str]
+  (let [[org project] (str/split repospec-str #"/")]
     {:org org :project project}))
 
 (defn valid-args? [argv]
@@ -61,5 +61,5 @@
     (println "invalid arguments:" (pr-str argv))
     (println "Usage: libclonecd ORG/REPO")
     (System/exit 1))
-  (let [repospec (str->repospec argv)]
+  (let [repospec (str->repospec (first argv))]
     (run repospec)))
