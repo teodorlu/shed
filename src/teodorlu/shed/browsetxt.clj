@@ -16,7 +16,8 @@
   returns nil on failure."
   [choices]
   (let [fzf-result (process/shell {:out :string
-                                   :in (str/join "\n" choices)}
+                                   :in (str/join "\n" choices)
+                                   :continue true}
                                   "fzf")]
     (when (= 0 (:exit fzf-result))
       (str/trim (:out fzf-result)))))
