@@ -15,7 +15,7 @@ Please install [babashka][babashka], [babashka/bbin][bbin], [fzf][fzf] and [Pand
 [fzf]: https://github.com/junegunn/fzf
 [pandoc]: https://pandoc.org/
 
-## Installing
+## Installing browsetxt
 
     bbin install io.github.teodorlu/shed --latest-sha --as browsetxt --main-opts '["-m" "teodorlu.shed.browsetxt/-main"]'
 
