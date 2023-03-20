@@ -6,6 +6,15 @@ Hypertext as plaintext.
 
 Demonstrate that Clojure, Pandoc and FZF is enought to create a minimal web browser
 
+## Prerequiesites
+
+Please install [babashka][babashka], [babashka/bbin][bbin], [fzf][fzf] and [Pandoc][pandoc].
+
+[babashka]: https://babashka.org/
+[bbin]: https://github.com/babashka/bbin
+[fzf]: https://github.com/junegunn/fzf
+[pandoc]: https://pandoc.org/
+
 ## Installing
 
     bbin install io.github.teodorlu/shed --latest-sha --as browsetxt --main-opts '["-m" "teodorlu.shed.browsetxt/-main"]'
