@@ -38,13 +38,14 @@
   (let [{:keys [org project]} repospec]
     (str "git@github.com:" org "/" project ".git")))
 
-(defn run [repospec]
+(defn run [repospec extra-git-args]
   (let [path (repospec->repo-path repospec)]
     (if (fs/exists? path)
       (println "!SHELLEVAL cd" path)
       (do
         (fs/create-dirs (repospec->org-path repospec))
-        (shell ["git" "clone" (repospec->git-url repospec) (repospec->repo-path repospec)])
+        (shell (into ["git" "clone" (repospec->git-url repospec) (repospec->repo-path repospec)]
+                     extra-git-arg))
         (println "!SHELLEVAL cd" path)))))
 
 (defn str->repospec [repospec-str]
@@ -62,4 +63,4 @@
     (println "Usage: libclonecd ORG/REPO")
     (System/exit 1))
   (let [repospec (str->repospec (first argv))]
-    (run repospec)))
+    (run repospec (rest argv))))
