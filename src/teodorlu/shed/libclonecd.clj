@@ -45,7 +45,7 @@
       (do
         (fs/create-dirs (repospec->org-path repospec))
         (shell (into ["git" "clone" (repospec->git-url repospec) (repospec->repo-path repospec)]
-                     extra-git-arg))
+                     extra-git-args))
         (println "!SHELLEVAL cd" path)))))
 
 (defn str->repospec [repospec-str]
