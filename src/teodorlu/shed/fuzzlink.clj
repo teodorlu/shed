@@ -20,16 +20,21 @@
        (map str/trim)
        (filter #(str/starts-with? %  "<div"))))
 
+(defn remove-whitespace [x]
+  (cond
+    (vector? x) (into [] (remove #{"" "\n"} x))
+    (seq? x) (remove #{"" "\n"} x)
+    :else x))
+
+(defn peek-deref-body [body]
+  {:sections
+   (->> (htmlparse/parse-fragment body)
+        (map htmlparse/as-hiccup)
+        (prewalk remove-whitespace))})
+
 (->>
- (map htmlparse/as-hiccup
-      (htmlparse/parse-fragment (first deref-bodies)))
- (prewalk (fn [x]
-            (if (vector? x)
-              (into [] (remove #{} x))
-              x)))
- (filter (fn [section]
-           (and
-            (= :div (first section)))))
+ deref-bodies
+ (map peek-deref-body)
  )
 
 (defn -main [& args]
