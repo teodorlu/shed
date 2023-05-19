@@ -3,7 +3,8 @@
         babashka/process {:mvn/version "0.4.16"}
         babashka/fs {:mvn/version "0.2.16"}
         cheshire/cheshire {:mvn/version "5.11.0"}
-        org.clojure/data.xml {:mvn/version "0.0.8"}}
+        org.clojure/data.xml {:mvn/version "0.0.8"}
+        selmer/selmer {:mvn/version "1.12.58"}}
  :aliases
  {:dev
   {:extra-paths ["dev"]

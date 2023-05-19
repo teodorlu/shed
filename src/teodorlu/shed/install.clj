@@ -33,6 +33,7 @@
   (install-script! "ukenummer")
   (install-script! "update-repos")
   (install-script! "kanshibb")
+  (install-script! "fuzzlink")
 
   ,)
 
