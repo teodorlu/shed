@@ -2,4 +2,9 @@
  :deps {org.babashka/cli {:mvn/version "0.6.44"}
         babashka/process {:mvn/version "0.4.16"}
         babashka/fs {:mvn/version "0.2.16"}
-        cheshire/cheshire {:mvn/version "5.11.0"}}}
+        cheshire/cheshire {:mvn/version "5.11.0"}
+        org.clojure/data.xml {:mvn/version "0.0.8"}}
+ :aliases
+ {:dev
+  {:extra-paths ["dev"]
+   :extra-deps {io.github.nextjournal/clerk {:mvn/version "0.13.842"}}}}}
