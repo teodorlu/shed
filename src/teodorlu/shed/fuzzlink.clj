@@ -3,7 +3,8 @@
    [clojure.data.xml]
    [clojure.string :as str]
    [hickory.core :as htmlparse]
-   [clojure.walk :refer [prewalk]]))
+   [clojure.walk :refer [prewalk]]
+   [net.cgrand.enlive-html :as html]))
 
 (def clojure-deref-rss-uri "https://clojure.org/feed.xml")
 (def clojure-deref-text (slurp clojure-deref-rss-uri))
