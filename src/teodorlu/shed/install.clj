@@ -21,6 +21,7 @@
 (defn install-script! [script]
   (let [as (str "," script)
         main-opts (str "'[\"-m\" \"teodorlu.shed." script "/-main\"]'") ]
+    (println "Installing:" as)
     (shell-project-root (str/join " " ["bbin" "install" "." "--as" as "--main-opts" main-opts]))))
 
 (defn -main [& _args]
@@ -34,6 +35,7 @@
   (install-script! "update-repos")
   (install-script! "kanshibb")
   (install-script! "fuzzlink")
+  (install-script! "shortid")
 
   ,)
 
