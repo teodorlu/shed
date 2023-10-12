@@ -36,6 +36,7 @@
   (install-script! "kanshibb")
   (install-script! "fuzzlink")
   (install-script! "shortid")
+  (install-script! "title2slug")
 
   ,)
 
@@ -43,3 +44,7 @@
 ;; see babashka book: https://book.babashka.org/#main_file
 (when (= *file* (System/getProperty "babashka.file"))
   (-main))
+
+(comment
+  (-main)
+  )
