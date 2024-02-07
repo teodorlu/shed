@@ -27,17 +27,17 @@
 
 (defn -main [& _args]
   (install-script! "browsetxt")
+  (install-script! "fuzzlink")
+  (install-script! "kanshibb")
   (install-script! "libclonecd")
   (install-script! "libquickcd")
   (install-script! "month")
   (install-script! "path-lines")
   (install-script! "quick-clone")
-  (install-script! "ukenummer")
-  (install-script! "update-repos")
-  (install-script! "kanshibb")
-  (install-script! "fuzzlink")
   (install-script! "shortid")
   (install-script! "title2slug")
+  (install-script! "ukenummer")
+  (install-script! "update-repos")
 
   ,)
 
