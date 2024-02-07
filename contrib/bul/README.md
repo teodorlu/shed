@@ -3,6 +3,12 @@
 I really like Babashka, and I really like Unix.
 So let's make a compatibility layer.
 
+## THIS CODE HAS MOVED.
+
+New name: **Babashka Unix Bridge**
+
+New repository: https://github.com/teodorlu/bub
+
 ## Examples
 
 Directory contents, sorted:
