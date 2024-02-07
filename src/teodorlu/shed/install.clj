@@ -18,11 +18,12 @@
   ([opts s]
    (shell (merge {:dir project-root} opts) s)))
 
-(defn install-script! [script]
-  (let [as (str "," script)
-        main-opts (str "'[\"-m\" \"teodorlu.shed." script "/-main\"]'") ]
-    (println "Installing:" as)
-    (shell-project-root (str/join " " ["bbin" "install" "." "--as" as "--main-opts" main-opts]))))
+(defn install-script!
+  ([main] (install-script! main (str "," main)))
+  ([main as]
+   (let [main-opts (str "'[\"-m\" \"teodorlu.shed." main "/-main\"]'") ]
+     (println "Installing:" as)
+     (shell-project-root (str/join " " ["bbin" "install" "." "--as" as "--main-opts" main-opts])))))
 
 (defn -main [& _args]
   (install-script! "browsetxt")
