@@ -63,12 +63,8 @@ chmod +x bin/kaocha
   ;; => "1.88.1376"
   :rcf)
 
-#_{:clj-kondo/ignore [:unused-binding]}
-(defn add-kaocha [{:keys [root] :as opts}]
-  (let [opts (cond-> opts
-               (not (:root opts))
-               (assoc :root "."))
-        root (:root opts)]
+(defn add-kaocha [{:keys [root]}]
+  (let [root (or root ".")]
     (fs/create-dirs (fs/file root "bin"))
     (fs/create-file (fs/file root "bin" "kaocha") {:posix-file-permissions posix-permissions-executable})
     (spit (fs/file root "bin" "kaocha") kaocha-binstub)
