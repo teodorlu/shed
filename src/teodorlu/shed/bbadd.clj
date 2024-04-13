@@ -82,7 +82,7 @@ chmod +x bin/kaocha
     ;; Perhaps Neil should provide a "plumbing" API for editing deps.edn and bb.edn?
     ))
 
-(fs/create-file "teodor.sh" {:posix-file-permissions "rwxr-xr-x"})
+;;(fs/create-file "teodor.sh" {:posix-file-permissions "rwxr-xr-x"})
 
 (defn add-launchpad [])
 
@@ -94,7 +94,13 @@ chmod +x bin/kaocha
 (defn -main [& argv]
   (when (not (valid-argv? argv))
     (println "invalid arguments:" (pr-str argv))
-    (println "Usage: bbadd kaocha or bbadd launchpad")
+    (println "Usage:
+
+  bbadd kaocha
+
+or
+
+  bbadd launchpad")
     (System/exit 1))
   ((get {"kaocha" add-kaocha
          "launchpad" add-launchpad}
