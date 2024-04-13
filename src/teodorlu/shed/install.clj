@@ -38,6 +38,7 @@
   (install-script! "title2slug")
   (install-script! "ukenummer")
   (install-script! "update-repos")
+  (install-script! "bbadd")
 
   ,)
 
