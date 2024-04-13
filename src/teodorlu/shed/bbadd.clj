@@ -55,14 +55,16 @@ chmod +x bin/kaocha
 (defn add-kaocha [{:keys [root]}]
   (let [root (or root ".")]
     (fs/create-dirs (fs/file root "bin"))
-    (fs/create-file (fs/file root "bin" "kaocha") {:posix-file-permissions posix-permissions-executable})
+    (when (not (fs/exists? (fs/file root "bin" "kaocha")))
+      (fs/create-file (fs/file root "bin" "kaocha") {:posix-file-permissions posix-permissions-executable}))
     (spit (fs/file root "bin" "kaocha") kaocha-binstub)
     (shell {:dir root :out nil} "neil add kaocha")))
 
 (defn add-launchpad [{:keys [root]}]
   (let [root (or root ".")]
     (fs/create-dirs (fs/file root "bin"))
-    (fs/create-file (fs/file root "bin" "launchpad") {:posix-file-permissions posix-permissions-executable})
+    (when (not (fs/exists? (fs/file root "bin" "launchpad")))
+      (fs/create-file (fs/file root "bin" "launchpad") {:posix-file-permissions posix-permissions-executable}))
     (spit (fs/file root "bin" "launchpad") launcpad-binstub)
     (shell {:dir root :out nil} "neil dep add" "--lib" launchpad-coord "--deps-file" "bb.edn")))
 
