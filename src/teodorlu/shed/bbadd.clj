@@ -88,8 +88,7 @@ chmod +x bin/kaocha
 
 (defn valid-argv? [argv]
   (and (= 1 (count argv))
-       (or (= "kaocha" (first argv))
-           (= "launchpad" (first argv)))))
+       (#{"kaocha" "launchpad"} (first argv))))
 
 (defn -main [& argv]
   (when (not (valid-argv? argv))
