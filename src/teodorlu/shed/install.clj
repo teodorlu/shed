@@ -26,6 +26,7 @@
      (shell-project-root (str/join " " ["bbin" "install" "." "--as" as "--main-opts" main-opts])))))
 
 (defn -main [& _args]
+  (install-script! "bbadd")
   (install-script! "browsetxt")
   (install-script! "fuzzlink")
   (install-script! "kanshibb")
@@ -38,7 +39,6 @@
   (install-script! "title2slug")
   (install-script! "ukenummer")
   (install-script! "update-repos")
-  (install-script! "bbadd")
 
   ,)
 
