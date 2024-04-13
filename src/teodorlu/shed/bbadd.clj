@@ -39,7 +39,7 @@
 (def kaocha-binstub (str/trim "
 mkdir -p bin
 echo '#!/usr/bin/env sh' > bin/kaocha
-echo 'clojure -M:test \"$@\"' >> bin/kaocha
+echo 'clojure -M:kaocha \"$@\"' >> bin/kaocha
 chmod +x bin/kaocha
 "
                      ))
@@ -74,13 +74,9 @@ chmod +x bin/kaocha
         root (:root opts)
         version (:version opts)]
     (fs/create-dirs (fs/file root "bin"))
-    (fs/create-file (fs/file root "bin " "kaocha") {:posix-file-permissions posix-permissions-executable})
-    (spit (fs/file root "bin " "kaocha") kaocha-binstub)
-    ;; TODO
-    ;;
-    ;; I figured I now have to edit deps.edn, and that's better done for neil.
-    ;; Perhaps Neil should provide a "plumbing" API for editing deps.edn and bb.edn?
-    ))
+    (fs/create-file (fs/file root "bin" "kaocha") {:posix-file-permissions posix-permissions-executable})
+    (spit (fs/file root "bin" "kaocha") kaocha-binstub)
+    (shell {:dir root :out nil} "neil add kaocha")))
 
 ;;(fs/create-file "teodor.sh" {:posix-file-permissions "rwxr-xr-x"})
 
@@ -103,4 +99,5 @@ or
     (System/exit 1))
   ((get {"kaocha" add-kaocha
          "launchpad" add-launchpad}
-        (first argv))))
+        (first argv))
+   {}))
