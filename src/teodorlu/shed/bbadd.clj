@@ -5,13 +5,32 @@
    [clojure.string :as str]
    [babashka.fs :as fs]))
 
-;; A ragtag collection of things to add
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
-;; A more beautiful solution would be to use jorm
+;; bbadd: A few things one might wish to add to Clojure projects.
+;;
+;; Currently supported:
+;;
+;; - lambdaisland/kaocha - a test runner
+;; - lambdaisland/launchpad - a REPL launcher
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; HOW TO INSTALL THIS SCRIPT
+;;
+;; 1. You can copy the file, make it executable and add a babashka shebang.
+;;
+;; 2. Or you can use bbin:
+;;
+;;         bbin install io.github.teodorlu/shed --latest-sha --as bbadd \
+;;             --main-opts '["-m" "teodorlu.shed.bbadd/-main"]'
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Some time in the future I'd like to support arbitrary templates as data with
+;; Jorm. But for now, let's just write imperative functions.
 ;;
 ;;     https://github.com/teodorlu/jorm
-;;
-;; But I just get stuck in analysis paralysis, so let's start here.
 
 (defn parse-neil-line [line]
   (->> (str/split line #"\s+")
@@ -96,3 +115,7 @@ or
          "launchpad" add-launchpad}
         (first argv))
    {}))
+
+;; Support running as a standalone script too
+(when (= *file* (System/getProperty "babashka.file"))
+  (apply -main *command-line-args*))
