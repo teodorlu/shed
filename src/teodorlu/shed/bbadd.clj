@@ -1,7 +1,6 @@
 (ns teodorlu.shed.bbadd
   (:require
    [babashka.process :refer [shell]]
-   [clojure.edn :as edn]
    [clojure.string :as str]
    [babashka.fs :as fs]))
 
@@ -28,28 +27,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Some time in the future I'd like to support arbitrary templates as data with
-;; Jorm. But for now, let's just write imperative functions.
-;;
-;;     https://github.com/teodorlu/jorm
-
-(defn parse-neil-line [line]
-  (->> (str/split line #"\s+")
-       (partition 2)
-       (map (fn [[k v]]
-              [(edn/read-string k) v]))
-       (into {})))
-
-(comment
-  (parse-neil-line ":lib com.lambdaisland/launchpad :version 0.28.129-alpha")
-  :rcf)
-
-(defn latest-version-from-neil [mvn-coord]
-  (let [latest-info (-> (shell {:out :string} "neil dep versions" mvn-coord)
-                        :out
-                        str/split-lines
-                        first
-                        parse-neil-line)]
-    (:version latest-info)))
+;; teodorlu/jorm. But for now, let's just write imperative functions.
 
 (def launchpad-coord 'com.lambdaisland/launchpad)
 (def kaocha-coord 'lambdaisland/kaocha)
@@ -73,14 +51,6 @@ chmod +x bin/kaocha
 ;; (launchpad/main {:steps (into [(partial launchpad/ensure-java-version 17)]
 ;;                               launchpad/default-steps)})
 "))
-
-(comment
-  (latest-version-from-neil launchpad-coord)
-  ;; => "0.28.129-alpha"
-
-  (latest-version-from-neil kaocha-coord)
-  ;; => "1.88.1376"
-  :rcf)
 
 (defn add-kaocha [{:keys [root]}]
   (let [root (or root ".")]
@@ -117,5 +87,10 @@ or
    {}))
 
 ;; Support running as a standalone script too
+;;
+;; If you want to run as a standalone script, remember
+;;
+;; - add a shebang (#!/usr/bin/env bb) to the top of the file
+;; - make the file executable.
 (when (= *file* (System/getProperty "babashka.file"))
   (apply -main *command-line-args*))
