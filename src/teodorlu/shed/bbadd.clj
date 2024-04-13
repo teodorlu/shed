@@ -64,21 +64,15 @@ chmod +x bin/kaocha
   :rcf)
 
 #_{:clj-kondo/ignore [:unused-binding]}
-(defn add-kaocha [{:keys [root version] :as opts}]
+(defn add-kaocha [{:keys [root] :as opts}]
   (let [opts (cond-> opts
-               (not (:version opts))
-               (assoc :version (latest-version-from-neil kaocha-coord))
-
                (not (:root opts))
                (assoc :root "."))
-        root (:root opts)
-        version (:version opts)]
+        root (:root opts)]
     (fs/create-dirs (fs/file root "bin"))
     (fs/create-file (fs/file root "bin" "kaocha") {:posix-file-permissions posix-permissions-executable})
     (spit (fs/file root "bin" "kaocha") kaocha-binstub)
     (shell {:dir root :out nil} "neil add kaocha")))
-
-;;(fs/create-file "teodor.sh" {:posix-file-permissions "rwxr-xr-x"})
 
 (defn add-launchpad [])
 
