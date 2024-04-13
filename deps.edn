@@ -5,7 +5,8 @@
         cheshire/cheshire {:mvn/version "5.11.0"}
         org.clojure/data.xml {:mvn/version "0.0.8"}
         org.clj-commons/hickory {:mvn/version "0.7.3"}
-        enlive/enlive {:mvn/version "1.1.6"}}
+        enlive/enlive {:mvn/version "1.1.6"}
+        borkdude/edamame {:mvn/version "1.4.25"}}
  :aliases
  {:dev
   {:extra-paths ["dev"]
