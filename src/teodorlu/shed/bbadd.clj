@@ -21,8 +21,7 @@
 ;;
 ;; 2. Or you can use bbin:
 ;;
-;;         bbin install io.github.teodorlu/shed --latest-sha --as bbadd \
-;;             --main-opts '["-m" "teodorlu.shed.bbadd/-main"]'
+;;         bbin install io.github.teodorlu/shed --latest-sha --as bbadd  --main-opts '["-m" "teodorlu.shed.bbadd/-main"]'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -34,10 +33,8 @@
 (def posix-permissions-executable "rwxr-xr-x")
 
 (def kaocha-binstub (str/trim "
-mkdir -p bin
-echo '#!/usr/bin/env sh' > bin/kaocha
-echo 'clojure -M:kaocha \"$@\"' >> bin/kaocha
-chmod +x bin/kaocha
+#!/usr/bin/env sh
+clojure -M:kaocha \"$@\"
 "
                      ))
 
