@@ -32,13 +32,18 @@
 (def kaocha-coord 'lambdaisland/kaocha)
 (def posix-permissions-executable "rwxr-xr-x")
 
-(def kaocha-binstub (str/trim "
+(defn normalize-file-string
+  "Ensures that s has no leading or trailing whitespace other than a single newline"
+  [s]
+  (str (str/trim s) "\n"))
+
+(def kaocha-binstub (normalize-file-string "
 #!/usr/bin/env sh
 clojure -M:kaocha \"$@\"
 "
-                     ))
+                              ))
 
-(def launcpad-binstub (str/trim "
+(def launcpad-binstub (normalize-file-string "
 #!/usr/bin/env bb
 
 (require '[lambdaisland.launchpad :as launchpad])
