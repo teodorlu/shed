@@ -15,13 +15,16 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
-;; HOW TO INSTALL THIS SCRIPT
+;; HOW TO INSTALL THIS SCRIPT FROM GITHUB
 ;;
 ;; 1. You can copy the file, make it executable and add a babashka shebang.
 ;;
 ;; 2. Or you can use bbin:
 ;;
 ;;         bbin install io.github.teodorlu/shed --latest-sha --as bbadd  --main-opts '["-m" "teodorlu.shed.bbadd/-main"]'
+;;
+;; For more installation options, see the toplevel README.
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
