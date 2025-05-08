@@ -10,4 +10,5 @@
  :aliases
  {:dev
   {:extra-paths ["dev" "test"]
-   :extra-deps {io.github.nextjournal/clerk {:mvn/version "0.17.1102"}}}}}
+   :extra-deps {io.github.nextjournal/clerk {:mvn/version "0.17.1102"}
+                lambdaisland/kaocha {:mvn/version "1.91.1392"}}}}}
