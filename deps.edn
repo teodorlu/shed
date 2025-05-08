@@ -1,13 +1,13 @@
 {:paths ["src"]
- :deps {babashka/fs {:mvn/version "0.2.16"}
-        babashka/process {:mvn/version "0.4.16"}
-        borkdude/edamame {:mvn/version "1.4.25"}
-        cheshire/cheshire {:mvn/version "5.11.0"}
+ :deps {babashka/fs {:mvn/version "0.5.25"}
+        babashka/process {:mvn/version "0.6.23"}
+        borkdude/edamame {:mvn/version "1.4.30"}
+        cheshire/cheshire {:mvn/version "6.0.0"}
         enlive/enlive {:mvn/version "1.1.6"}
-        org.babashka/cli {:mvn/version "0.6.44"}
-        org.clj-commons/hickory {:mvn/version "0.7.3"}
+        org.babashka/cli {:mvn/version "0.8.65"}
+        org.clj-commons/hickory {:mvn/version "0.7.7"}
         org.clojure/data.xml {:mvn/version "0.0.8"}}
  :aliases
  {:dev
   {:extra-paths ["dev" "test"]
-   :extra-deps {io.github.nextjournal/clerk {:mvn/version "0.13.842"}}}}}
+   :extra-deps {io.github.nextjournal/clerk {:mvn/version "0.17.1102"}}}}}
