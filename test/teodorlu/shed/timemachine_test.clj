@@ -1,6 +1,5 @@
 (ns teodorlu.shed.timemachine-test
   (:require [babashka.fs :as fs]
-            [babashka.process :as p]
             [clojure.test :refer [deftest is]]
             [teodorlu.shed.timemachine :as timemachine]))
 
