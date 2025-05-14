@@ -19,28 +19,34 @@
 ;;
 ;;   --keep - don't delete the worktree and folder after execution
 
-(comment
-  (-> (p/shell {:out :string} "git status") :out str/split-lines)
-  ;; => ["On branch master"
-  ;;     "Your branch is ahead of 'origin/master' by 3 commits."
-  ;;     "  (use \"git push\" to publish your local commits)"
-  ;;     ""
-  ;;     "Untracked files:"
-  ;;     "  (use \"git add <file>...\" to include in what will be committed)"
-  ;;     "\tsrc/teodorlu/shed/timemachine.clj"
-  ;;     "\ttest/teodorlu/shed/timemachine_test.clj"
-  ;;     ""
-  ;;     "nothing added to commit but untracked files present (use \"git add\" to track)"]
+(defn rev-parse [dir git-revision]
+  (-> (p/shell {:out :string :dir dir}
+               "git rev-parse" git-revision)
+      :out str/trim))
 
-  (-> (p/shell {:out :string} "git status --porcelain") :out str/split-lines)
-  ;; => ["?? src/teodorlu/shed/timemachine.clj"
-  ;;     "?? test/teodorlu/shed/timemachine_test.clj"]
+(defn worktree-add [dir path commit-ish & [extra-process-opts]]
+  (-> (p/shell (merge {:dir dir} extra-process-opts)
+               "git worktree add" path commit-ish)
+      p/check))
 
-  (defonce identifier (str (random-uuid)))
-  (defonce tempdir (fs/create-temp-dir))
+(defn worktree-remove [dir worktree & [extra-process-opts]]
+  (-> (p/shell (merge {:dir dir} extra-process-opts)
+               "git worktree remove" worktree)
+      p/check))
 
-  (spit (fs/file tempdir "lol.txt") "haha lol")
-  (map fs/file-name (fs/list-dir tempdir))
-  (fs/delete (fs/file tempdir "lol.txt"))
+(defn ^{:indent 1} do-at
+  "Pass handle-fn a dir argument where dir is the Git repo checked out at given
+  Git revision
 
-  )
+  git-revision: eg HEAD or 91fa7c32 or trunk
+  handle-fn: function of directory where files have been checked out."
+  [git-revision handle-fn]
+  (let [tempdir (fs/create-temp-dir)
+        repo-dir "."
+        sha (rev-parse repo-dir git-revision)
+        worktree-dir (str (fs/file tempdir sha))]
+    (worktree-add repo-dir worktree-dir sha)
+    (try
+      (handle-fn worktree-dir)
+      (finally
+        (worktree-remove repo-dir worktree-dir)))))
