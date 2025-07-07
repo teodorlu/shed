@@ -37,7 +37,7 @@
 
   (defn count-repos [path]
     (count (fs/glob path "**/.git" {:hidden true})))
-  (count-repos (fs/expand-home "~/dev"))
+  (count-repos (fs/expand-home "~/repo"))
   ;; => 245
   )
 

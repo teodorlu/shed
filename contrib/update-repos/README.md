@@ -5,27 +5,27 @@ Run to update any git repos found in the current folder.
 Example:
 
     $ pwd
-    /home/teodorlu/dev/babashka
+    /home/teodorlu/repo/babashka
     $ update-repos
-    update-repos: updating /home/teodorlu/dev/babashka/scittle
+    update-repos: updating /home/teodorlu/repo/babashka/scittle
     Already up to date.
-    update-repos: updating /home/teodorlu/dev/babashka/babashka
+    update-repos: updating /home/teodorlu/repo/babashka/babashka
     Already up to date.
-    update-repos: updating /home/teodorlu/dev/babashka/sci
+    update-repos: updating /home/teodorlu/repo/babashka/sci
     Already up to date.
-    update-repos: updating /home/teodorlu/dev/babashka/bbin
+    update-repos: updating /home/teodorlu/repo/babashka/bbin
     Already up to date.
-    update-repos: updating /home/teodorlu/dev/babashka/http-server
+    update-repos: updating /home/teodorlu/repo/babashka/http-server
     Already up to date.
-    update-repos: updating /home/teodorlu/dev/babashka/cli
+    update-repos: updating /home/teodorlu/repo/babashka/cli
     Already up to date.
-    update-repos: updating /home/teodorlu/dev/babashka/fs
+    update-repos: updating /home/teodorlu/repo/babashka/fs
     Already up to date.
-    update-repos: updating /home/teodorlu/dev/babashka/process
+    update-repos: updating /home/teodorlu/repo/babashka/process
     Already up to date.
-    update-repos: updating /home/teodorlu/dev/babashka/pods
+    update-repos: updating /home/teodorlu/repo/babashka/pods
     Already up to date.
-    update-repos: updating /home/teodorlu/dev/babashka/book
+    update-repos: updating /home/teodorlu/repo/babashka/book
     Already up to date.
-    update-repos: updating /home/teodorlu/dev/babashka/pod-babashka-fswatcher
+    update-repos: updating /home/teodorlu/repo/babashka/pod-babashka-fswatcher
     Already up to date.

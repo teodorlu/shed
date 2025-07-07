@@ -1,6 +1,6 @@
 #+title: clonecd
 
-=,clonecd teodorlu/shed= - git clone teodorlu/shed into ~/dev/teodorlu/shed, and cd into it.
+=,clonecd teodorlu/shed= - git clone teodorlu/shed into ~/repo/teodorlu/shed, and cd into it.
 
 * Usage
 
@@ -9,7 +9,7 @@
 #+end_src
 
 This operation clones =https://github.com/babashka/babashka= into
-=~/dev/babashka/babashka= if necessary, then changes directory into that folder.
+=~/repo/babashka/babashka= if necessary, then changes directory into that folder.
 
 * Installing
 First, install the babashka script with bbin.

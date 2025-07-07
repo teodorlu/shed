@@ -1,8 +1,8 @@
 (ns teodorlu.shed.libclonecd
   (:require
-   [clojure.string :as str]
    [babashka.fs :as fs]
-   [babashka.process :refer [shell]]))
+   [babashka.process :refer [shell]]
+   [clojure.string :as str]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; HOW TO INSTALL, HOW TO USE
@@ -24,15 +24,15 @@
 ;;
 ;; Repospec as local folder:
 ;;
-;;     ~/dev/babashka/neil
+;;     ~/repo/babashka/neil
 
 (defn repospec->repo-path [repospec]
   (let [{:keys [org project]} repospec]
-    (str (fs/expand-home "~/dev") "/" org "/" project)))
+    (str (fs/expand-home "~/repo") "/" org "/" project)))
 
 (defn repospec->org-path [repospec]
   (let [{:keys [org]} repospec]
-    (str (fs/expand-home "~/dev") "/" org)))
+    (str (fs/expand-home "~/repo") "/" org)))
 
 (defn repospec->git-url [repospec]
   (let [{:keys [org project]} repospec]
